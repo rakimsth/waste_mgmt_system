@@ -1,0 +1,5 @@
+1. Create Model
+2. Create CRUD Controller (add, update, get, list, delete, toggleActive, toggleApproved)
+3. Create CRUD API's
+4. Connect CRUD API to routes Manager
+5. Test CRUD API
