@@ -10,7 +10,8 @@ module.exports = {
   },
   plugins: ['prettier'],
   rules: {
-    quotes: [2, 'single'],
+    'class-methods-use-this': 0,
+    quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
     'prettier/prettier': [
       'error',
       { singleQuote: true, parser: 'flow', semi: true, trailingComma: 'none' }
