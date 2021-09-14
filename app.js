@@ -11,7 +11,10 @@ const app = express();
 
 require('dotenv').config({ path: `${__dirname}/env/${process.env.NODE_ENV}.env` });
 
-mongoose.connect(process.env.DB);
+mongoose.connect(process.env.DB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.use(logger('dev'));
 app.use(express.json());
