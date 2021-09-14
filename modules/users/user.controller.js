@@ -1,4 +1,4 @@
-const Model = require('./schedule.model');
+const Model = require('./user.model');
 
 class Controller {
   add(payload) {
@@ -11,6 +11,7 @@ class Controller {
   }
 
   update(id, payload) {
+    if (!payload) throw new Error('Must send some Payload');
     return Model.findByIdAndUpdate(id, payload);
   }
 

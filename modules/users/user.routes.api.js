@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const Controller = require('./schedule.controller');
+const Controller = require('./user.controller');
 
-// create Schedule
+// create User
 router.post('/', async (q, r, n) => {
   const payload = q.body || {};
   Controller.add(payload)
@@ -9,14 +9,14 @@ router.post('/', async (q, r, n) => {
     .catch(e => n(e));
 });
 
-// list Schedule
+// list User
 router.get('/', async (q, r, n) => {
   Controller.list()
     .then(d => r.json(d))
     .catch(e => n(e));
 });
 
-// update schedule
+// update User
 
 router.put('/:id', async (q, r, n) => {
   const payload = q.body;
@@ -26,7 +26,7 @@ router.put('/:id', async (q, r, n) => {
     .catch(e => n(e));
 });
 
-// delete schedule
+// delete User
 
 router.delete('/:id', async (q, r, n) => {
   Controller.delete(q.params.id)
