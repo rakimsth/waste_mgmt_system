@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-  res.json('Hello World from API!!');
-});
+const scheduleApi = require('../modules/schedules/schedule.routes.api');
+
+router.use('/schedule', scheduleApi);
 
 module.exports = router;
