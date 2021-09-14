@@ -14,7 +14,7 @@ module.exports = {
     quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
     'prettier/prettier': [
       'error',
-      { singleQuote: true, parser: 'flow', semi: true, trailingComma: 'none' }
+      { singleQuote: true, parser: 'flow', semi: true, trailingComma: 'none', endOfLine: 'auto' }
     ],
     camelcase: 'off',
     'arrow-body-style': 'off',
