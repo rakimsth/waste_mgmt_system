@@ -1,5 +1,5 @@
 const Model = require('./user.model');
-
+const { textUtils } = require('../../utils/textUtils');
 class Controller {
   add(payload) {
     if (!payload) throw new Error('Must send some Payload');
@@ -7,6 +7,10 @@ class Controller {
   }
 
   list() {
+    const test = textUtils.sentenceSantizer(
+      'Institutions#$   possessing a special   character are the monti frumentarii, public grain deposits, founded for the purpose of supplying peasant proprietors with seed corn, debts being paid in kind with interest after harvest.'
+    );
+    console.log(test);
     return Model.find().sort({ created_at: -1 });
   }
 
