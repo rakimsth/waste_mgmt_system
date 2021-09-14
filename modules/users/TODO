@@ -1,5 +1,24 @@
-1. Create Model
-2. Create CRUD Controller
-3. Create CRUD API's
-4. Connect CRUD API to routes Manager
-5. Test CRUD API
+/*
+User Controllers
+- list all users
+- add new user
+- update existing user
+- get my profile
+- toggle active status only
+- toggle approve status only
+- register new user
+- change password
+- reset password
+- update user roles only
+- login user by email
+- login user by phone
+- send password to user by email notification
+- get user details
+- remove user
+- suspend user
+- get access token (JWT)
+- validate access token
+- update/upload photo only
+- generate salt and hash for password
+- sign in using social media such as google fb twitter
+*/
