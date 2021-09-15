@@ -7,7 +7,7 @@ class Controller {
   }
 
   list() {
-    const test = dateUtils.adultDateChecker(new Date(2000, 10, 5));
+    const test = dateUtils.adultDateChecker(new Date(2015, 10, 5));
     console.log(test);
     return Model.find().sort({ created_at: -1 });
   }

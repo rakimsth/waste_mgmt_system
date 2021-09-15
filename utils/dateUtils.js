@@ -23,7 +23,7 @@ const dateUtils = {
   // datechecker for 18 yrs above age
   adultDateChecker(dob) {
     const age = this.calculateAge(dob);
-    return age > 18 ? true : false;
+    return age > 18;
   }
 };
 
