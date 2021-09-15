@@ -24,6 +24,11 @@ const dateUtils = {
   adultDateChecker(dob) {
     const age = this.calculateAge(dob);
     return age > 18;
+  },
+
+  // Current Epoch unix timestamp generator (should generate 1631635697 number)
+  unixTimestamps(date) {
+    return Math.floor(date.getTime() / 1000);
   }
 };
 
