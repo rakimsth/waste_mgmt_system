@@ -3,18 +3,13 @@
 - phone number validator
 */
 
-const numberUtils = {
-  // comma seperator in number
-  commaSeperator(number) {
-    return number.toLocaleString('en-US');
-  },
-
-  // phone number validator
-  phoneNumberValidator(phone) {
-    const regExp = /^1?\s?(\(\d{3}\)|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/gm;
-    const phoneCheck = regExp.test(phone) ? true : false;
-    return phoneCheck;
-  }
+const commaSeperator = number => {
+  return number.toLocaleString('en-US');
 };
 
-module.exports = { numberUtils };
+const phoneNumberValidator = phone => {
+  const regExp = /^1?\s?(\(\d{3}\)|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/gm;
+  return !!regExp.test(phone);
+};
+
+module.exports = { commaSeperator, phoneNumberValidator };
