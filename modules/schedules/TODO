@@ -1,5 +1,10 @@
-1. Create Model
-2. Create CRUD Controller (add, update, get, list, delete, toggleActive, toggleApproved)
-3. Create CRUD API's
-4. Connect CRUD API to routes Manager
-5. Test CRUD API
+/*
+Schedule Controllers
+- list all schedules; list (GET)
+- add new schedule; add (POST)
+- update existing schedule; update (PUT)
+- get schedule details; getById  (GET)
+- remove schedule; delete  (DELETE)
+- assign group to schedule; updateScheduleByGroup  (PATCH)
+- update location only of existing schedule; updateLocationOfGroup (PATCH)
+*/

@@ -1,14 +1,29 @@
 const mongoose = require('mongoose');
 
+const { ObjectId } = mongoose.Schema;
+
 const ScheduleSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
-    time: { type: String, required: true },
-    day: { type: String },
-    date: { type: Date, required: true },
-    medium: { type: String },
-    is_active: { type: Boolean, required: true, default: true },
-    is_approved: { type: Boolean, required: true, default: true }
+    startTime: { type: String },
+    endTime: { type: String },
+    allDay: { type: Boolean, default: false },
+    isRecurring: { type: Boolean, default: false },
+    daysOfWeek: [
+      {
+        type: String,
+        enum: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+      }
+    ],
+    frequency: { type: String, enum: ['weekly', 'biweekly', 'monthly'] },
+    province: { type: String },
+    district: { type: String },
+    municipality: { type: String },
+    location: { type: String },
+    assignedTo: { type: ObjectId, ref: 'Groups' },
+    description: { type: String },
+    created_by: { type: ObjectId, ref: 'Users' },
+    updated_by: { type: ObjectId, ref: 'Users' }
   },
   {
     collection: 'schedules',
