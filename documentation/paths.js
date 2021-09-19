@@ -8,7 +8,7 @@ module.exports = {
         description: '',
         operationId: 'add',
         consumes: ['application/json'],
-        produces: ['application/json', 'application/xml'],
+        produces: ['application/json'],
         parameters: [
           {
             in: 'body',
