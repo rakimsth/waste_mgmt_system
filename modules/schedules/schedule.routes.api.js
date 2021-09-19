@@ -3,6 +3,7 @@ const Controller = require('./schedule.controller');
 
 // create Schedule
 router.post('/', async (q, r, n) => {
+  console.log(q);
   const payload = q.body || {};
   Controller.add(payload)
     .then(d => r.json(d))

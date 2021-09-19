@@ -19,7 +19,7 @@ module.exports = {
   host: apiLocation,
   basePath: apiVersion,
   securityDefinitions: {
-    JWT: {
+    access_token: {
       type: 'apiKey',
       in: 'header',
       name: 'access_token',
