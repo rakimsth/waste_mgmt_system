@@ -1,24 +1,24 @@
 /*
 User Controllers
-- list all users
-- add new user
-- update existing user
-- get my profile
-- toggle active status only
-- toggle approve status only
-- register new user
-- change password
-- reset password
-- update user roles only
-- login user by email
-- login user by phone
-- send password to user by email notification
-- get user details
-- remove user
-- suspend user
-- get access token (JWT)
-- validate access token
-- update/upload photo only
-- generate salt and hash for password
-- sign in using social media such as google fb twitter
+- list all users; list (GET)
+- add new user; add (POST)
+- update existing user; update (PUT)
+- get my profile; myProfile  (GET)
+- toggle active status only; toggleActiveStatus (PATCH)
+- toggle approve status only; toggleApprovedStatus (PATCH)
+- register new user; register (POST)
+- change password; changePassword  (PATCH)
+- reset password; resetPassword  (PATCH)
+- update user roles only; updateRoles  (PATCH)
+- login user by email; loginByEmail  (POST)
+- login user by phone; loginByPhone (POST)
+- send password to user by email notification; notifyByEmail
+- get user details; getById (GET)
+- remove user; removeUser  (DEL)
+- suspend user; suspendUser  (PATCH)
+- get access token (JWT); getAccessToken  (GET)
+- validate access token; validateToken 
+- update/upload photo only; updatePhoto  (PATCH)
+- generate salt and hash for password; securePassword
+- sign in using social media such as google fb twitter; socialLogin (GET)
 */
