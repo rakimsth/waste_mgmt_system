@@ -4,6 +4,10 @@ const Controller = require('./schedule.controller');
 // create Schedule
 router.post('/', async (q, r, n) => {
   const payload = q.body || {};
+  if (payload.allDay === 'true') {
+    delete payload.startTime;
+    delete payload.endTime;
+  }
   Controller.add(payload)
     .then(d => r.json(d))
     .catch(e => n(e));
