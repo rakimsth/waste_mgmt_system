@@ -8,6 +8,9 @@ router.post('/', async (q, r, n) => {
     delete payload.startTime;
     delete payload.endTime;
   }
+  if (payload.isRecurring === 'false') {
+    delete payload.frequency;
+  }
   Controller.add(payload)
     .then(d => r.json(d))
     .catch(e => n(e));
