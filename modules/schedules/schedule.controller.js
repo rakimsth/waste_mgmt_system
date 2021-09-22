@@ -39,6 +39,10 @@ class Controller {
     return Model.aggregate(filter).sort({ created_at: -1 });
   }
 
+  getById(id) {
+    return Model.findById(id);
+  }
+
   update(id, payload) {
     return Model.findByIdAndUpdate(id, payload);
   }

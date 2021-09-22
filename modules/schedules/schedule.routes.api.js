@@ -23,11 +23,16 @@ router.get('/', async (q, r, n) => {
     .catch(e => n(e));
 });
 
-// update schedule
+// list Schedule by id
+router.get('/:id', async (q, r, n) => {
+  Controller.getById(q.params.id)
+    .then(d => r.json(d))
+    .catch(e => n(e));
+});
 
+// update schedule
 router.put('/:id', async (q, r, n) => {
   const payload = q.body;
-
   Controller.update(q.params.id, payload)
     .then(d => r.json(d))
     .catch(e => n(e));
