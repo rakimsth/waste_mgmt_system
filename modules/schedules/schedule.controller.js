@@ -43,6 +43,14 @@ class Controller {
     return Model.findByIdAndUpdate(id, payload);
   }
 
+  updateLocation(id, location) {
+    return Model.findByIdAndUpdate(
+      { _id: id },
+      { $set: { location, updatedAt: new Date() } },
+      { new: true }
+    );
+  }
+
   delete(id) {
     return Model.findByIdAndRemove(id);
   }

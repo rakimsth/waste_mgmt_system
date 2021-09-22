@@ -17,7 +17,7 @@ router.get('/', async (q, r, n) => {
   const province = q.query.province || null;
   const district = q.query.district || null;
   const municipality = q.query.municipality || null;
-  const assignedTo = q.query.assignedTo || null;
+  const assignedTo = q.query.assignedTo || {};
   Controller.list({ limit, start, name, province, district, municipality, assignedTo })
     .then(d => r.json(d))
     .catch(e => n(e));
@@ -29,6 +29,13 @@ router.put('/:id', async (q, r, n) => {
   const payload = q.body;
 
   Controller.update(q.params.id, payload)
+    .then(d => r.json(d))
+    .catch(e => n(e));
+});
+
+// update location of existing schedule
+router.patch('/:id', async (q, r, n) => {
+  Controller.updateLocation(q.params.id, q.body.location)
     .then(d => r.json(d))
     .catch(e => n(e));
 });
