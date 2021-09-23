@@ -1,42 +1,55 @@
+const { ObjectId } = require('mongoose').Types;
+const { DataUtils } = require('../../helpers/data');
 const Model = require('./schedule.model');
 
 class Controller {
   add(payload) {
+    // object destructuring
     if (!payload) throw new Error('Must send some Payload');
     return Model.create(payload);
   }
 
   list({ limit, start, name, province, district, municipality, assignedTo }) {
-    const filter = [];
+    const query = [];
     if (name) {
-      filter.push({
+      query.push({
         $match: {
           name: new RegExp(name, 'gi')
         }
       });
     }
     if (province) {
-      filter.push({
+      query.push({
         $match: {
           province: new RegExp(province, 'gi')
         }
       });
     }
     if (district) {
-      filter.push({
+      query.push({
         $match: {
           district: new RegExp(district, 'gi')
         }
       });
     }
     if (municipality) {
-      filter.push({
+      query.push({
         $match: {
           municipality: new RegExp(municipality, 'gi')
         }
       });
     }
-    return Model.aggregate(filter).sort({ created_at: -1 });
+    if (assignedTo)
+      query.push({
+        $in: ObjectId(`${assignedTo}`)
+      });
+    return DataUtils.paging({
+      start,
+      limit,
+      sort: { created_at: 1 },
+      query,
+      model: Model
+    });
   }
 
   getById(id) {
