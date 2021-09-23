@@ -5,10 +5,14 @@ const Model = require('./schedule.model');
 
 class Controller {
   add(payload) {
-    const { startTime, endTime, ...rest } = payload;
-    // eslint-disable-next-line no-unused-expressions
-    payload.allDay === 'true' ? (payload = rest) : payload;
-
+    if (payload.allDay === 'true') {
+      const { startTime, endTime, ...rest } = payload;
+      payload = rest;
+    }
+    if (payload.isRecurring === 'false') {
+      const { frequency, ...rest } = payload;
+      payload = rest;
+    }
     if (!payload) throw new Error('Must send some Payload');
     return Model.create(payload);
   }
