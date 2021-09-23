@@ -1,10 +1,14 @@
+/* eslint-disable no-param-reassign */
 const { ObjectId } = require('mongoose').Types;
 const { DataUtils } = require('../../helpers/data');
 const Model = require('./schedule.model');
 
 class Controller {
   add(payload) {
-    // object destructuring
+    const { startTime, endTime, ...rest } = payload;
+    // eslint-disable-next-line no-unused-expressions
+    payload.allDay === 'true' ? (payload = rest) : payload;
+
     if (!payload) throw new Error('Must send some Payload');
     return Model.create(payload);
   }
