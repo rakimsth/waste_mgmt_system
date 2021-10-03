@@ -1,15 +1,14 @@
-/* eslint-disable no-param-reassign */
 const { ObjectId } = require('mongoose').Types;
 const { DataUtils } = require('../../helpers/data');
 const Model = require('./schedule.model');
 
 class Controller {
   add(payload) {
-    if (payload.allDay === 'true') {
+    if (payload.allDay) {
       const { startTime, endTime, ...rest } = payload;
       payload = rest;
     }
-    if (payload.isRecurring === 'false') {
+    if (!payload.isRecurring) {
       const { frequency, ...rest } = payload;
       payload = rest;
     }

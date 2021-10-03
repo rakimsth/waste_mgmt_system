@@ -12,10 +12,7 @@ const UserSchema = mongoose.Schema(
     gender: { type: String, enum: ['M', 'F', 'O', 'U'], default: 'U' },
     dob: { type: Date },
     address: String,
-    password: {
-      hash: { type: String, required: true, select: false },
-      salt: { type: String, required: true, select: false }
-    },
+    password: { type: String, required: true, select: false },
     is_approved: { type: Boolean, default: false, required: true },
     is_active: { type: Boolean, default: true, required: true },
     picture: String,
@@ -33,7 +30,7 @@ const UserSchema = mongoose.Schema(
   },
   {
     collection: 'users',
-    timeStamps: {
+    timestamps: {
       createdAt: 'created_at',
       updatedAt: 'updated_at'
     }

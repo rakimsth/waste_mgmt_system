@@ -1,24 +1,24 @@
 /*
 User Controllers
-- list all users; list (GET)
-- add new user; add (POST)
-- update existing user; update (PUT)
-- get my profile; myProfile  (GET)
-- toggle active status only; toggleActiveStatus (PATCH)
-- toggle approve status only; toggleApprovedStatus (PATCH)
+- COMPLETE - list all users; list (GET)
+- COMPLETE - add new user; add (POST)
+- COMPLETE - update existing user; update (PUT)
+- COMPLETE - get my profile; myProfile  (GET)
+- COMPLETE - toggle active status only; toggleActiveStatus (PATCH)
+- COMPLETE - toggle approve status only; toggleApprovedStatus (PATCH)
 - register new user; register (POST)
-- change password; changePassword  (PATCH)
-- reset password; resetPassword  (PATCH)
-- update user roles only; updateRoles  (PATCH)
-- login user by email; loginByEmail  (POST)
-- login user by phone; loginByPhone (POST)
+- COMPLETE - change password; changePassword  (PATCH)
+- COMPLETE - reset password; resetPassword  (PATCH)
+- COMPLETE - update user roles only; updateRoles  (PATCH)
+- COMPLETE - login user by email; loginByEmail  (POST)
+- COMPLETE - login user by phone; loginByPhone (POST)
 - send password to user by email notification; notifyByEmail
-- get user details; getById (GET)
-- remove user; removeUser  (DEL)
+- COMPLETE - get user details; getById (GET)
+- COMPLETE - remove user; removeUser  (DEL)
 - suspend user; suspendUser  (PATCH)
-- get access token (JWT); getAccessToken  (GET)
-- validate access token; validateToken 
+- COMPLETE - get access token (JWT); getAccessToken  (GET)
+- validate access token; validateToken  
 - update/upload photo only; updatePhoto  (PATCH)
-- generate salt and hash for password; securePassword
+- generate hash for password; securePassword
 - sign in using social media such as google fb twitter; socialLogin (GET)
 */
