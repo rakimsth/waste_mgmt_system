@@ -68,6 +68,10 @@ class Controller {
     return Model.findByIdAndUpdate(id, payload);
   }
 
+  assignGroupToSchedule(id, group) {
+    return Model.findByIdAndUpdate({ _id: id }, { $set: { assignedTo: group } }, { new: true });
+  }
+
   updateLocation(id, location) {
     return Model.findByIdAndUpdate(
       { _id: id },

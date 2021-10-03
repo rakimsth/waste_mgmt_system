@@ -38,6 +38,13 @@ router.put('/:id', async (q, r, n) => {
     .catch(e => n(e));
 });
 
+// Assign Group to schedule
+router.patch('/assign-group/:id', async (q, r, n) => {
+  Controller.assignGroupToSchedule(q.params.id, q.body.assignedTo)
+    .then(d => r.json(d))
+    .catch(e => n(e));
+});
+
 // update location of existing schedule
 router.patch('/:id', async (q, r, n) => {
   Controller.updateLocation(q.params.id, q.body.location)
