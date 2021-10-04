@@ -26,7 +26,6 @@ router.post('/login', async (q, r, n) => {
 // update User
 router.put('/:id', async (q, r, n) => {
   const payload = q.body;
-
   Controller.update(q.params.id, payload)
     .then(d => r.json(d))
     .catch(e => n(e));

@@ -18,9 +18,10 @@ class Controller {
     return Model.findOne({ _id: id });
   }
 
-  update(id, payload) {
+  async update(id, payload) {
     if (!payload) throw new Error('Must send some Payload');
-    return Model.findByIdAndUpdate(id, payload);
+    const newPayload = await this.userDetailsCleaner(payload);
+    return Model.findByIdAndUpdate(id, newPayload);
   }
 
   toggleActiveStatus(id, status) {
@@ -75,7 +76,7 @@ class Controller {
     if (!user) throw new Error('User not found');
     const passCheck = await decryptPassword(password, user.password);
     if (!passCheck) throw new Error('Username or Password Mismatch');
-    const jwtData = { name: user.name, roles: user.roles, user: user._id.toString() };
+    const jwtData = { name: user.name, roles: user.roles, user: user.id.toString() };
     return { token: generateJWT(jwtData) };
   }
 }
